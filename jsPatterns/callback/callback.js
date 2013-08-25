@@ -11,14 +11,14 @@ var logger = (function(){
     }
 })();
 
-var timer = (function (logger) {
+var timer = (function (cb) {
 
     var timeInterval = 1000,
         start,
         time = 5;
 
     start = setInterval(function(){
-        logger.log();
+        cb();
         time--;
 
         if(time === 0){
@@ -27,7 +27,7 @@ var timer = (function (logger) {
 
     }, timeInterval);
 
-})(logger);
+})(logger.log);
 
 
 
